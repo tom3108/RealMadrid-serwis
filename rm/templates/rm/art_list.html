@@ -1,12 +1,12 @@
 {% extends 'rm/base.html' %}
 
-{% block content %}
-    {% for art in arts%}
+    {% block content %}
+        {% for art in arts%}
 
-        <div class ="art">
-            <p> time created: {{ art.created_date }} </p>
-            <h2> <a href=""> {{ art.title }} </a> </h2>
-        </div>
+            <div >
+                <p> time created: {{ art.created_date }} </p>
+                <h2><a href="{% url 'art_detail' pk=art.pk %}">{{ art.title }}</a></h2>
+            </div>
 
-    {% endfor %}
-{% endblock %}
+        {% endfor %}
+    {% endblock %}
