@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>RMserwis</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Real Madrid Serwis</a></h1>
+        </div>
+        
+        {% for art in arts%}
+
+            <div>
+                <p> time created: {{ art.created_date }} </p>
+                <h2> <a href=""> {{ art.title }} </a> </h2>
+            </div>
+
+        {% endfor %}
+
+    </body>
+</html>
