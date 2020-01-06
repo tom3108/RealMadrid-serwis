@@ -1,26 +1,12 @@
-{% load static %}
-<html>
-    <head>
-        <title>RMserwis</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{static 'css/rm.css'}">
+{% extends 'rm/base.html' %}
 
+{% block content %}
+    {% for art in arts%}
 
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Real Madrid Serwis</a></h1>
+        <div class ="art">
+            <p> time created: {{ art.created_date }} </p>
+            <h2> <a href=""> {{ art.title }} </a> </h2>
         </div>
-        
-        {% for art in arts%}
 
-            <div class ="art">
-                <p> time created: {{ art.created_date }} </p>
-                <h2> <a href=""> {{ art.title }} </a> </h2>
-            </div>
-
-        {% endfor %}
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
